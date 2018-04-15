@@ -1,22 +1,21 @@
+
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
 
-const {app, BrowserWindow} = electron;
+const {app, Menu, Tray} = electron;
+let trayIcon = path.join(__dirname, "tray-icon.png");
 
-let mainWindow;
+let tray = null;
 
-//Listen for app to be ready
-
-app.on('ready', function(){
-    //Create new window
-    mainWindow = new BrowserWindow();
-
-    mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, "main-window.html"),
-        protocol: 'file',
-        slashes: true
-    }));
-
-
-});
+app.on('ready', () => {
+tray = new Tray(trayIcon);
+const contextMenu = Menu.buildFromTemplate([
+    {label: 'Item1', type: 'radio'},
+    {label: 'Item2', type: 'radio'},
+    {label: 'Item3', type: 'radio', checked: true},
+    {label: 'Quit', click(){ app.quit() } }
+])
+tray.setToolTip('This is my application.');
+tray.setContextMenu(contextMenu);
+})
