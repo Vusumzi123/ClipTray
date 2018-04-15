@@ -1,0 +1,31 @@
+{
+  "name": "cliptray",
+  "version": "0.1.0",
+  "description": "a clipboard history for your os tray",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vusumzi123/ClipTray.git"
+  },
+  "keywords": [
+    "ClipBoard",
+    "ClipTray",
+    "trayapp",
+    "tray",
+    "clip"
+  ],
+  "author": "Vusumzi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vusumzi123/ClipTray/issues"
+  },
+  "homepage": "https://github.com/Vusumzi123/ClipTray#readme",
+  "dependencies": {
+    "electron": "^1.8.4",
+    "eslint": "^4.19.1"
+  }
+}
